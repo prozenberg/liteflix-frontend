@@ -1,9 +1,11 @@
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const uploadMovie = async (file, title) => {
   const formData = new FormData();
   formData.append('file', file);
   formData.append('title', title);
 
-  const response = await fetch('http://localhost:3000/movies', {
+  const response = await fetch(`${apiUrl}/movies`, {
     method: 'POST',
     body: formData,
   });
